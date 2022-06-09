@@ -6,7 +6,7 @@ import './calculator.css'
 const Calculator = () => {
     const number = useSelector(state => state.calc.number)
     const dispatch = useDispatch()
-    const ops = ['+', '-', '*', '/']
+    const ops = ['+', '-', '*', '/', '.']
 
     const updateCalc = (value) => {
         if( 
@@ -135,9 +135,7 @@ const Calculator = () => {
                 0
                 </div>
                 <div className="col" onClick={() => {
-                    dispatch(calcButton('.'))
-
-                   
+                    updateCalc('.')
                 }}>
                 .
                 </div>
